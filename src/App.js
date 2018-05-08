@@ -30,8 +30,8 @@ class App extends React.Component {
 
         const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&mode=json&appid=${API_KEY}&units=metric`);
         const data = await api_call.json();
-        // console.log(data)
 
+        //condition to see if a value is enter in the form.
         if(city && country) {
             this.setState({
                 temperature: data.main.temp,
@@ -43,7 +43,6 @@ class App extends React.Component {
             })
         }
         else {
-
             this.setState({
                 temperature: undefined,
                 city: undefined,

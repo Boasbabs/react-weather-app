@@ -1,5 +1,8 @@
 import React from "react";
 
+// Using React.component
+
+/*
 class Weather extends React.Component {
     render() {
         return(
@@ -13,5 +16,19 @@ class Weather extends React.Component {
         )
     }
 }
+*/
+
+
+// Using stateless function
+const Weather = (props) => (
+    <div>
+        {props.city && props.country && <p>Location: {props.city}, {props.country}</p> }
+        {props.temperature && <p>Temperature: {props.temperature}</p> }
+        {props.humidity && <p>Humidity: {props.humidity}</p> }
+        {props.description && <p>Description: {props.description}</p> }
+        {props.error && <p> {props.error}</p> }
+    </div>
+    )
+
 
 export default Weather;
